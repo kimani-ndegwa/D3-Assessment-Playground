@@ -1,0 +1,23 @@
+{
+  "name": "d3-assessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=testing mocha \"tests/*.test.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimani-ndegwa/D3-Assessment-Playground.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimani-ndegwa/D3-Assessment-Playground/issues"
+  },
+  "homepage": "https://github.com/kimani-ndegwa/D3-Assessment-Playground#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}
