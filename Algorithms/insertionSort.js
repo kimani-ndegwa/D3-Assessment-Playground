@@ -1,3 +1,3 @@
-const insertionSort = () => {};
+const insertionSort = array => {};
 
 module.exports = insertionSort;
