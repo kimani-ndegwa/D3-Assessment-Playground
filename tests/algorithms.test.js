@@ -15,4 +15,16 @@ describe("Algorithms", () => {
     expect(result).to.equal([1, 2, 4, 12, 22, 76]);
     done();
   });
+
+  it("Merge Sort", done => {
+    const result = mergeSort([3, 71, 321, 9, 14, 3]);
+    expect(result).to.equal([1, 3, 9, 14, 71, 321]);
+    done();
+  });
+
+  it("Quick Sort", done => {
+    const result = quickSort([12, 42, 1111, 2, 7, 32]);
+    expect(result).to.equal([2, 7, 12, 32, 42, 1111]);
+    done();
+  });
 });
