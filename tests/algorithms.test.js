@@ -25,7 +25,7 @@ describe("Algorithms", () => {
   });
 
   it("Merge Sort", done => {
-    const result = mergeSort([3, 71, 321, 9, 14, 3]);
+    const result = mergeSort([3, 71, 9, 14, 1, 321]);
     expect(result).to.be.an("array");
     expect(result).to.eql([1, 3, 9, 14, 71, 321]);
     done();
