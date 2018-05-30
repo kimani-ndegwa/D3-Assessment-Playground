@@ -12,10 +12,15 @@ const quickSort = require("../Algorithms/quickSort");
  */
 
 describe("Algorithms", () => {
+  // This works like a deck of cards.
+  // Every swap has to be in sync till the end.
   it("Insertion Sort", done => {
     const result = insertionSort([4, 2, 1, 22, 76, 12]);
+    const result2 = insertionSort([14, 72, 61, 6, 17]);
     expect(result).to.be.an("array");
+    expect(result2).to.be.an("array");
     expect(result).to.eql([1, 2, 4, 12, 22, 76]);
+    expect(result2).to.eql([6, 14, 17, 61, 72]);
     done();
   });
 
