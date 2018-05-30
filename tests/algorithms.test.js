@@ -3,6 +3,8 @@ const { expect } = require("chai");
 
 // Module to test
 const insertionSort = require("../Algorithms/insertionSort");
+const mergeSort = require("../Algorithms/mergeSort");
+const quickSort = require("../Algorithms/quickSort");
 
 /**
  * Test suite to evaluate the responses from the
