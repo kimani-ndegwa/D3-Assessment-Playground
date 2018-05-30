@@ -32,9 +32,9 @@ describe("Algorithms", () => {
   });
 
   it("Quick Sort", done => {
-    const result = quickSort([12, 42, 1111, 2, 7, 32]);
+    const result = quickSort([12, 42, 111, 2, 7, 32]);
     expect(result).to.be.an("array");
-    expect(result).to.eql([2, 7, 12, 32, 42, 1111]);
+    expect(result).to.eql([2, 7, 12, 32, 42, 111]);
     done();
   });
 });
