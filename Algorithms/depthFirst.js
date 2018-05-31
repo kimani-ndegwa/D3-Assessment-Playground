@@ -35,7 +35,6 @@ const depthFirstSearch = (graph, start) => {
       });
     }
   }
-
   return "Done";
 };
 
