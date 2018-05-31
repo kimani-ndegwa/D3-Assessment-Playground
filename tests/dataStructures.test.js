@@ -24,6 +24,7 @@ describe("Data Strucures", () => {
     expect(testNode.parent).to.be.null;
     expect(testNode.edges).to.be.an("array");
     expect(testNode.edges.length).to.equal(0);
+    expect(testNode.addEdge).to.be.a("function");
     done();
   });
 
@@ -31,6 +32,11 @@ describe("Data Strucures", () => {
     expect(testGraph.nodes).to.be.an("array");
     expect(testGraph.nodes.length).to.equal(0);
     expect(testGraph.graph).to.be.an("object");
+    expect(testGraph.graph).to.be.empty;
+    expect(testGraph.addNode).to.be.a("function");
+    expect(testGraph.getNode).to.be.a("function");
+    expect(testGraph.setStart).to.be.a("function");
+    expect(testGraph.setEnd).to.be.a("function");
     done();
   });
 });

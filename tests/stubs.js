@@ -16,3 +16,5 @@ const companies = [
     founders: ["Mark Zuckerberg", "Christina Sass"]
   }
 ];
+
+module.exports = companies;
