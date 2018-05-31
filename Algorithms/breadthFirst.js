@@ -1,125 +1,72 @@
 /**
- *
+ * BFS: Breadth first search
  */
 
-// Generate Graph and use it as a Hash table.
+const companies = require("../tests/stubs");
+const Graph = require("../DataStructures/graph");
+const Node = require("../DataStructures/node");
 
-const schools = [
-  {
-    title: "Schoola",
-    teacherList: [
-      {
-        name: "Jane Doe",
-        subject: "English"
-      },
-      {
-        name: "Ja Do",
-        subject: "Pijin"
+const generateGraphDS = require("../utils");
+
+// Initialise graph
+
+let graph = generateGraphDS();
+
+/**
+ * Check Every Edge and add that to a Queue.
+ * Following the Algorithm PseudoCode as per: https://en.wikipedia.org/wiki/Breadth-first_search
+ */
+
+const breadFirstSearch = (start, end) => {
+  let queue = []; // Needs to be a FIFO data structure. Using an array for now.
+
+  start.searched = true; // First ensure the root is searched
+  queue.push(start); // Add the start to the queue.
+  while (queue.length > 0) {
+    // Dequeue
+    let current = queue.shift();
+
+    // Sanity check to ensure the algorithm is actually working.
+
+    console.log(`Checking: ${current.value}`);
+    if (current === end) {
+      return end.value;
+      // Done! We outta here!
+    }
+
+    let { edges } = current;
+    for (let i = 0; i < edges.length; i++) {
+      let neighbor = edges[i];
+      // Check if it has been visited.
+      if (!neighbor.searched) {
+        neighbor.searched = true;
+        // Then set where it is coming from
+        neighbor.parent = current;
+        queue.push(neighbor);
       }
-    ]
-  },
-  {
-    title: "Schoolb",
-    teacherList: [
-      {
-        name: "Alex Magana",
-        subject: "Mathematics"
-      },
-      {
-        name: "Jeannette Wairimu",
-        subject: "Travel"
-      }
-    ]
-  }
-];
-
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.edges = [];
-    this.visited = false;
-    this.parent = null;
+    }
   }
 
-  addEdge(neighbour) {
-    this.edges.push(neighbour);
-    neighbour.edges.push(this);
-  }
-}
+  reconstructPath(end);
+};
 
-class Graph {
-  constructor(nodes, graph) {
-    this.nodes = [];
-    this.graph = {};
-  }
-
-  /**
-   * @param node
-   * returns
-   */
-
-  addNode(node) {
-    let nodes = [...this.nodes, node];
-    this.nodes = nodes;
-    let title = node.value;
-    this.graph[title] = node;
+const reconstructPath = end => {
+  // Back tracking to get the full path using BFS.
+  let path = [];
+  path.push(end);
+  let next = end.parent;
+  while (next != null) {
+    // Check node.js line number 10.
+    path.push(next);
+    next = next.parent;
   }
 
-  /**
-   * Get Nodes
-   * return null if the node does not exist
-   */
+  return path;
+};
 
-  getNode(entity) {
-    return this.graph[entity];
-  }
-}
+// console.log(breadthFirstSearch*end));
+console.log(
+  breadFirstSearch(graph.setStart("Emmanuel E"), graph.setEnd("Emmanuel E"))
+);
 
-let graph = new Graph();
-
-schools.forEach(school => {
-  // Get the properties of the school from the school object.
-  let { title, teacherList } = school;
-  let schoolNode = new Node(title);
-  graph.addNode(schoolNode);
-
-  // Add the teacher list nodes as well
-  if (teacherList.length && !graph.getNode(teacher.name)) {
-    teacherList.forEach(teacher => {
-      let teacherNode = new Node(teacher);
-      graph.addNode(teacherNode);
-    });
-  }
-});
-
-console.log(graph, "here");
-// let nodes = [
-//   {
-//     links: [1], // node 0 is linked to node 1
-//     visited: false
-//   },
-//   {
-//     links: [0, 2], // node 1 is linked to node 0 and 2
-//     path: [],
-//     visited: false
-//   }
-// ];
-
-// function bfs(start) {
-//   var listToExplore = [start];
-//   console.log(listToExplore, ">>>");
-
-//   nodes[start].visited = true;
-
-//   while (listToExplore.length > 0) {
-//     var nodeIndex = listToExplore.shift();
-//     nodes[nodeIndex].links.forEach(function(childIndex) {
-//       if (nodes[childIndex] && !nodes[childIndex].visited) {
-//         nodes[childIndex].visited = true;
-//         listToExplore.push(childIndex);
-//       }
-//     });
-//   }
-// }
-
-// bfs(1);
+module.exports = breadFirstSearch;
