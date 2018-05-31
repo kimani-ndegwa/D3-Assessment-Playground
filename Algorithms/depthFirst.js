@@ -40,8 +40,3 @@ const depthFirstSearch = (graph, start) => {
 };
 
 module.exports = depthFirstSearch;
-
-let start = graph.setStart("Emmanuel E");
-let end = graph.setEnd("Mark Zuckerberg");
-console.log(depthFirstSearch(start, end), "DFS");
-console.log(reconstructPath(end), "DFS");
