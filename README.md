@@ -11,7 +11,9 @@ Pivotal Tracker Board [here]("https://www.pivotaltracker.com/n/projects/2175602"
 
 1. Clone this project on your machine by running `git clone https://github.com/kimani-ndegwa/D3-Assessment-Playground.git`
 
-2. Change directory into the different sections e.g to run the Depth First Search Algorithm.
+2. Checkout into the develop branch `git checkout develop`.
+
+3. Change directory into the different sections e.g to run the Depth First Search Algorithm.
 
 > `cd Algorithms`
 
