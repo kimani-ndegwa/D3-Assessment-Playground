@@ -1,5 +1,5 @@
 /**
- * BFS Test
+ * DFS Test
  */
 
 const mocha = require("mocha");
@@ -12,7 +12,7 @@ const Graph = require("../DataStructures/graph");
 const { generateGraph, reconstructPath } = require("../utils");
 
 // Function
-const breadthFirstSearch = require("../Algorithms/breadthFirst");
+const depthFirstSearch = require("../Algorithms/depthFirst");
 
 describe("Breadth First", () => {
   let graph, node, start, end;
@@ -21,7 +21,7 @@ describe("Breadth First", () => {
     graph = generateGraph();
     start = graph.setStart("Emmanuel E");
     end = graph.setEnd("Emmanuel E");
-    end2 = graph.setEnd("Mark Zuckerberg");
+    end2 = graph.setEnd("Alex Adebayo");
     done();
   });
 
@@ -32,22 +32,9 @@ describe("Breadth First", () => {
     done();
   });
 
-  it("Expect value to be equal to start if the same", done => {
-    let endvalue = breadthFirstSearch(start, end);
-    expect(endvalue).to.be.equal("Emmanuel E");
-    done();
-  });
-
-  it("Expect end value to match the goal", done => {
-    let endvalue = breadthFirstSearch(start, end2);
-    expect(endvalue).to.be.equal("Mark Zuckerberg");
-    done();
-  });
-
-  it("Reconnstructs the path appropriately", done => {
-    breadthFirstSearch(start, end2);
-    let result = reconstructPath(end2);
-    expect(result).to.be.a("String");
+  it("Expect return Done when over", done => {
+    let endvalue = depthFirstSearch(start, end);
+    expect(endvalue).to.be.equal("Done");
     done();
   });
 });

@@ -6,15 +6,19 @@ const companies = require("../tests/stubs");
 const Graph = require("../DataStructures/graph");
 const Node = require("../DataStructures/node");
 
-const generateGraphDS = require("../utils");
+const { generateGraph, reconstructPath } = require("../utils");
 
-// Initialise graph
+// Initialise graph Data Structure.
+// You can use an array of objects if need be.
+// As long as you can maintain a list of visited/searched nodes as keys in object.
 
-let graph = generateGraphDS();
+let graph = generateGraph();
 
 /**
  * Check Every Edge and add that to a Queue.
  * Following the Algorithm PseudoCode as per: https://en.wikipedia.org/wiki/Breadth-first_search
+ * Simulates the path it would take for a Founder in one Company to interact with
+ * a founder in another company.
  */
 
 const breadFirstSearch = (start, end) => {
@@ -27,17 +31,16 @@ const breadFirstSearch = (start, end) => {
     let current = queue.shift();
 
     // Sanity check to ensure the algorithm is actually working.
-
-    console.log(`Checking: ${current.value}`);
+    // console.log(`Checking: ${current.value}`);
     if (current === end) {
+      // Done
       return end.value;
-      // Done! We outta here!
     }
 
     let { edges } = current;
     for (let i = 0; i < edges.length; i++) {
       let neighbor = edges[i];
-      // Check if it has been visited.
+      // Check if node has been visited / searched.
       if (!neighbor.searched) {
         neighbor.searched = true;
         // Then set where it is coming from
@@ -46,27 +49,6 @@ const breadFirstSearch = (start, end) => {
       }
     }
   }
-
-  reconstructPath(end);
 };
-
-const reconstructPath = end => {
-  // Back tracking to get the full path using BFS.
-  let path = [];
-  path.push(end);
-  let next = end.parent;
-  while (next != null) {
-    // Check node.js line number 10.
-    path.push(next);
-    next = next.parent;
-  }
-
-  return path;
-};
-
-// console.log(breadthFirstSearch*end));
-console.log(
-  breadFirstSearch(graph.setStart("Emmanuel E"), graph.setEnd("Emmanuel E"))
-);
 
 module.exports = breadFirstSearch;
