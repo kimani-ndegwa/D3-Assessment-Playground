@@ -9,7 +9,7 @@ const { expect } = require("chai");
 const Node = require("../DataStructures/node");
 const Graph = require("../DataStructures/graph");
 
-describe("Data Strucures", () => {
+describe("Data Structures", () => {
   let testNode, testGraph;
 
   before("Initialise the graph and node", done => {
