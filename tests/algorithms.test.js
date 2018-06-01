@@ -13,8 +13,6 @@ const heapSort = require("../Algorithms/heapSort");
  */
 
 describe("Sort Algorithms", () => {
-  // This works like a deck of cards.
-  // Every swap has to be in sync till the end.
   it("Insertion Sort", done => {
     const result = insertionSort([4, 2, 1, 22, 76, 12]);
     const result2 = insertionSort([14, 72, 61, 6, 17]);
@@ -42,7 +40,7 @@ describe("Sort Algorithms", () => {
   it("Heap Sort", done => {
     const result = heapSort([13, 2, 1, 21, -1, -12]);
     expect(result).to.be.an("array");
-    expect(result).to.eql([-12, -1, 1, 2, 13]);
+    expect(result).to.be.eql([-12, -1, 1, 2, 13, 21]);
     done();
   });
 });

@@ -9,12 +9,13 @@ const { expect } = require("chai");
 const Node = require("../DataStructures/node");
 const Graph = require("../DataStructures/graph");
 const Spot = require("../DataStructures/spot");
+const Person = require("../DataStructures/person");
 
 // helpers
 const { generate2DArray } = require("../utils");
 
 describe("Data Structures", () => {
-  let testNode, testGraph, testSpot, grid;
+  let testNode, testGraph, testSpot, grid, testPerson;
 
   before("Initialise the graph and node", done => {
     testNode = new Node("value");
@@ -71,6 +72,13 @@ describe("Data Structures", () => {
     let { i, j } = x.revealSpot();
     expect(i).to.be.equal(2);
     expect(j).to.be.equal(4);
+    done();
+  });
+
+  it("Evaluates Person Properties", done => {
+    testPerson = new Person("John", 32);
+    expect(testPerson.name).to.equal("John");
+    expect(testPerson.age).to.equal(32);
     done();
   });
 });
