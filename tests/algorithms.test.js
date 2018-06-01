@@ -5,13 +5,14 @@ const { expect } = require("chai");
 const insertionSort = require("../Algorithms/insertionSort");
 const mergeSort = require("../Algorithms/mergeSort");
 const quickSort = require("../Algorithms/quickSort");
+const heapSort = require("../Algorithms/heapSort");
 
 /**
  * Test suite to evaluate the responses from the
  * Algorithm Section.
  */
 
-describe("Algorithms", () => {
+describe("Sort Algorithms", () => {
   // This works like a deck of cards.
   // Every swap has to be in sync till the end.
   it("Insertion Sort", done => {
@@ -35,6 +36,13 @@ describe("Algorithms", () => {
     const result = quickSort([12, 42, 111, 2, 7, 32]);
     expect(result).to.be.an("array");
     expect(result).to.eql([2, 7, 12, 32, 42, 111]);
+    done();
+  });
+
+  it("Heap Sort", done => {
+    const result = heapSort([13, 2, 1, 21, -1, -12]);
+    expect(result).to.be.an("array");
+    expect(result).to.eql([-12, -1, 1, 2, 13]);
     done();
   });
 });
