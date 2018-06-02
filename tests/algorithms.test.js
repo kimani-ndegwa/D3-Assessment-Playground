@@ -6,13 +6,14 @@ const insertionSort = require("../Algorithms/insertionSort");
 const mergeSort = require("../Algorithms/mergeSort");
 const quickSort = require("../Algorithms/quickSort");
 const heapSort = require("../Algorithms/heapSort");
+const { simpleDecoding, simpleEncoding } = require("../Algorithms/hashing");
 
 /**
  * Test suite to evaluate the responses from the
  * Algorithm Section.
  */
 
-describe("Sort Algorithms", () => {
+describe("Sort Algorithms. Hashing coming in at the end.", () => {
   it("Insertion Sort", done => {
     const result = insertionSort([4, 2, 1, 22, 76, 12]);
     const result2 = insertionSort([14, 72, 61, 6, 17]);
@@ -41,6 +42,15 @@ describe("Sort Algorithms", () => {
     const result = heapSort([13, 2, 1, 21, -1, -12]);
     expect(result).to.be.an("array");
     expect(result).to.be.eql([-12, -1, 1, 2, 13, 21]);
+    done();
+  });
+
+  it("Simple Hashing method", done => {
+    let string = "My Test";
+    let encodedString = simpleEncoding(string);
+    let decoded = simpleDecoding(encodedString);
+    expect(simpleEncoding(string)).to.not.be.equal(string);
+    expect(decoded).to.be.equal(string);
     done();
   });
 });

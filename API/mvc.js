@@ -22,9 +22,23 @@ const Controller = {
     res.json("Welcome to the home API route.");
   },
 
-  createPerson: (req, res) => {
+  showPerson: (req, res) => {
     let person = new Model.PersonModel("Test", "Person");
     View.show(person);
+  },
+
+  createPerson: (req, res) => {
+    let person = new Model.PersonModel("Test", "Person");
+    // Return what is in the body for now.
+    res.status(201).send({ data: req.body });
+  },
+
+  updatePerson: (req, res) => {
+    res.send({ data: req.body });
+  },
+
+  deletePerson: (req, res) => {
+    res.status(204).send("");
   }
 };
 
