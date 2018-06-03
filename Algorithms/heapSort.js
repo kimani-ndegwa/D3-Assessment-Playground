@@ -31,7 +31,7 @@ const heapify = (array, i, max) => {
 };
 
 const swap = (array, firstItemIndex, lastItemIndex) => {
-  var temp = array[firstItemIndex];
+  let temp = array[firstItemIndex];
 
   // Swap first and last items in the array.
   array[firstItemIndex] = array[lastItemIndex];

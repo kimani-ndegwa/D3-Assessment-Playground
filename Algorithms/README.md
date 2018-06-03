@@ -4,7 +4,7 @@
 
  This is a smart algorithm technique that looks for a better path to move from one vertices to another in a graph data structure. It determines this better path using a heuristic function which gives priority to nodes that are supposed to be better than others. Mostly used in path finding and game applications.
 
- View the pseudocode [here.]("https://en.wikipedia.org/wiki/A*_search_algorithm")
+ View the pseudocode [here]("https://en.wikipedia.org/wiki/A*_search_algorithm")
 
 # Breadth First Search (Level Order Traversal)
 
@@ -29,7 +29,7 @@ View pseudocode [here]("https://en.wikipedia.org/wiki/Depth-first_search")
 A hash algorithm is a function that converts a data string into a numeric string output of fixed length.
 
 Examples of Hashing Functions
-- Mainly for security as in developing Public Kets for application
+- Mainly for security as in developing Public Keys for application
 - SHA1
 - MD5
 - SHA256, SHA512
