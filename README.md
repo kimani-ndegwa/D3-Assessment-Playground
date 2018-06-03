@@ -28,6 +28,6 @@ The tests are set up using mocha and chai.
 
 Each Section has a brief section explaining the thinking behind most of the implementation built out.
 
-#To Do
+# To Do
 
 This can be reviewed in the ice box section listed [here]("https://www.pivotaltracker.com/n/projects/2175602").
