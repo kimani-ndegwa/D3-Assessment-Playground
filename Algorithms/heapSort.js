@@ -1,5 +1,6 @@
-// First satisfy the max array property/
+// First satisfy the max heap property.
 // Root node must be the maximum.
+// Relationship between array indexes and tree elements.
 
 const heapify = (array, i, max) => {
   let index, leftChild, righChild;
@@ -7,6 +8,7 @@ const heapify = (array, i, max) => {
   while (i < max) {
     index = i;
 
+    // Ref: https://www.programiz.com/dsa/heap-sort
     leftChild = 2 * i + 1;
     righChild = leftChild + 1;
 
@@ -62,7 +64,7 @@ const heapSort = array => {
 
     heapify(array, 0, lastElement);
 
-    lastElement -= 1;
+    lastElement--;
   }
 
   return array;
