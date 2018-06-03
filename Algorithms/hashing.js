@@ -9,21 +9,20 @@
  */
 
 // Simple hashing method using unicode and bitwise operators.
-// This one can easlily be brokem.
+// This one can easily be broken.
 const hashCode = str => {
   let hash = 0;
   if (!str || str.length === 0) return hash;
   str = [str];
   str.forEach((s, i) => {
     let char = s.charCodeAt(i); // Get unicode.
-    hash = (hash << 5) - hash + char; // Effectively = hash * 32
+    // Effectively = hash * 32
+    hash = (hash << 5) - hash + char;
     hash = hash * 165;
   });
 
   return hash;
 };
-
-console.log(hashCode("ake"));
 
 module.exports = {
   hashCode
