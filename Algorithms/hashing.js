@@ -5,18 +5,26 @@
  * The goal is to be able to obsfucate characters.
  * Secure hash function takes a salt and is used for
  * ensuring password security.
+ * Reference : http://erlycoder.com/49/javascript-hash-functions-to-convert-string-into-integer-hash-
  */
 
-// This is more of encoding/ decoding
-const simpleEncoding = stringToHash => {
-  return Buffer.from(stringToHash).toString("base64");
+// Simple hashing method using unicode and bitwise operators.
+// This one can easlily be brokem.
+const hashCode = str => {
+  let hash = 0;
+  if (!str || str.length === 0) return hash;
+  str = [str];
+  str.forEach((s, i) => {
+    let char = s.charCodeAt(i); // Get unicode.
+    hash = (hash << 5) - hash + char; // Effectively = hash * 32
+    hash = hash * 165;
+  });
+
+  return hash;
 };
 
-const simpleDecoding = hashed => {
-  return new Buffer.from(hashed, "base64").toString("ascii");
-};
+console.log(hashCode("ake"));
 
 module.exports = {
-  simpleEncoding,
-  simpleDecoding
+  hashCode
 };
