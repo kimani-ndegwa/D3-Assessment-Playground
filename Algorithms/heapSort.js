@@ -60,7 +60,7 @@ const heapSort = array => {
 
   // Continue array sorting until we have
   // just one element left in the array.
-  while (lastElement > 0) {
+  while (lastElement > -1 && lastElement > 0) {
     swap(array, 0, lastElement);
 
     heapify(array, 0, lastElement);
