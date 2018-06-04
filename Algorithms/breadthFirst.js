@@ -21,7 +21,7 @@ let graph = generateGraph();
  * a founder in another company.
  */
 
-const breadFirstSearch = (start, end) => {
+const breadthFirstSearch = (start, end) => {
   let queue = []; // Needs to be a FIFO data structure. Using an array for now.
 
   start.searched = true; // First ensure the root is searched
@@ -49,4 +49,4 @@ const breadFirstSearch = (start, end) => {
   }
 };
 
-module.exports = breadFirstSearch;
+module.exports = breadthFirstSearch;
