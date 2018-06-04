@@ -1,6 +1,7 @@
 // First satisfy the max heap property.
 // Root node must be the maximum.
 // Relationship between array indexes and tree elements.
+// O (logn)
 
 const heapify = (array, i, max) => {
   let index, leftChild, righChild;
@@ -31,7 +32,7 @@ const heapify = (array, i, max) => {
 };
 
 const swap = (array, firstItemIndex, lastItemIndex) => {
-  var temp = array[firstItemIndex];
+  let temp = array[firstItemIndex];
 
   // Swap first and last items in the array.
   array[firstItemIndex] = array[lastItemIndex];
