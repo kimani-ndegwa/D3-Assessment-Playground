@@ -55,7 +55,7 @@ const heapSort = array => {
   getMaxArray(array);
 
   // Find last element.
-  lastElement = array.length - 1;
+  let lastElement = array.length - 1;
 
   // Continue array sorting until we have
   // just one element left in the array.
