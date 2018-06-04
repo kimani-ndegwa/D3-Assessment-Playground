@@ -34,7 +34,7 @@ describe("Breadth First", () => {
 
   it("Expect return Done when over", done => {
     let endvalue = depthFirstSearch(start, end);
-    expect(endvalue).to.be.equal("Done");
+    expect(endvalue).to.be.equal("Emmanuel E");
     done();
   });
 });
