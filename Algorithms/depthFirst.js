@@ -10,14 +10,15 @@ let graph = generateGraph();
 
 const depthFirstSearch = (graph, start) => {
   // Start with an empty stack
-  let queue = [];
+  // LIFO
+  let stack = [];
   let path = [];
 
   // Push start to queue
-  queue.push(start);
+  stack.push(start);
 
-  while (queue.length > 0) {
-    let current = queue.pop();
+  while (stack.length > 0) {
+    let current = stack.pop();
 
     if (current.searched === true) {
       // if not labelled as visited
@@ -29,7 +30,7 @@ const depthFirstSearch = (graph, start) => {
       edges.forEach(edge => {
         // Add it to the queue if not visited
         if (!edge.searched) {
-          queue.push(edge);
+          stack.push(edge);
           path.push(edge);
         }
       });
