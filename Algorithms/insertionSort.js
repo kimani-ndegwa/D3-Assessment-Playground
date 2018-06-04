@@ -15,7 +15,7 @@ const insertionSort = array => {
 
     while (previousPosition > -1 && array[previousPosition] > currentItem) {
       array[previousPosition + 1] = array[previousPosition];
-      previousPosition = previousPosition - 1;
+      previousPosition--;
     }
 
     array[previousPosition + 1] = currentItem;

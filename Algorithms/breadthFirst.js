@@ -38,16 +38,14 @@ const breadFirstSearch = (start, end) => {
     }
 
     let { edges } = current;
-    for (let i = 0; i < edges.length; i++) {
-      let neighbor = edges[i];
-      // Check if node has been visited / searched.
-      if (!neighbor.searched) {
-        neighbor.searched = true;
-        // Then set where it is coming from
-        neighbor.parent = current;
-        queue.push(neighbor);
+
+    edges.forEach(edge => {
+      if (!edge.searched) {
+        edge.searched = true;
+        edge.parent = current;
+        queue.push(edge);
       }
-    }
+    });
   }
 };
 

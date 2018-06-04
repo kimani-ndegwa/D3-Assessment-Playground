@@ -31,7 +31,7 @@ const heapify = (array, i, max) => {
 };
 
 const swap = (array, firstItemIndex, lastItemIndex) => {
-  let temp = array[firstItemIndex];
+  var temp = array[firstItemIndex];
 
   // Swap first and last items in the array.
   array[firstItemIndex] = array[lastItemIndex];
@@ -40,7 +40,7 @@ const swap = (array, firstItemIndex, lastItemIndex) => {
 
 const getMaxArray = array => {
   // The array here is interchangeably used to refer to our heap.
-
+  // In a complete tree the first index of a non-leaf node is given by this.
   let i = Math.floor(array.length / 2 - 1);
 
   // Build a max array out of
