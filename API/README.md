@@ -13,3 +13,7 @@ Common API standards and best practices:
 3. Flexibility - More output and input formats,  case insensitiveness e.t.c
 4. Security - Token Based Auth i.e using JWT or Json Web Tokens using Passport JS.
 5. Ease of Adoption - KISS.Provide language specific documentation.
+
+# Note
+
+Please add a `.env` file with the `PORT` variable for this to work in the root of the cloned project.

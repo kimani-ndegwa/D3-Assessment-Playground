@@ -5,7 +5,7 @@
 
 This repository contains a number of exercises that I have built out for the different skills noted in the developer framework at Andela.
 
-Pivotal Tracker Board [here]("https://www.pivotaltracker.com/n/projects/2175602")
+Pivotal Tracker Board [here](https://www.pivotaltracker.com/n/projects/2175602)
 # Set Up
 
 1. Clone this project on your machine by running `git clone https://github.com/kimani-ndegwa/D3-Assessment-Playground.git`

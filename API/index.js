@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(Router);
 
 app.listen(PORT, (req, res) => {
-  console.log(`Simple Express API running on port ${process.env.PORT}`);
+  console.log(`Simple Express API running on port ${PORT}`);
 });
 
 module.exports = app;

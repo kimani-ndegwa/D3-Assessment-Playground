@@ -4,7 +4,7 @@
 
  This is a smart algorithm technique that looks for a better path to move from one vertices to another in a graph data structure. It determines this better path using a heuristic function which gives priority to nodes that are supposed to be better than others. Mostly used in path finding and game applications.
 
- View the pseudocode [here]("https://en.wikipedia.org/wiki/A*_search_algorithm")
+ View the pseudocode [here](https://en.wikipedia.org/wiki/A*_search_algorithm)
 
 # Breadth First Search (Level Order Traversal)
 
@@ -12,7 +12,7 @@ This is a tree traversal algorithm that goes all the levels of the tree one by o
 
 > Simply Go Wide.
 
-View pseudocode [here]("https://en.wikipedia.org/wiki/Breadth-first_search")
+View pseudocode [here](https://en.wikipedia.org/wiki/Breadth-first_search)
 
 
 # Depth First Search.
@@ -21,7 +21,7 @@ This search algorithm goes through every left node before moving to the right
 
 > Simply Go Deep
 
-View pseudocode [here]("https://en.wikipedia.org/wiki/Depth-first_search")
+View pseudocode [here](https://en.wikipedia.org/wiki/Depth-first_search)
 
 
 # Hashing Algorithm
