@@ -30,4 +30,4 @@ Each Section has a brief section explaining the thinking behind most of the impl
 
 # To Do
 
-This can be reviewed in the ice box section listed [here]("https://www.pivotaltracker.com/n/projects/2175602").
+This can be reviewed in the ice box section listed [here](https://www.pivotaltracker.com/n/projects/2175602).
